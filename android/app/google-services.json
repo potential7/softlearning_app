@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "112619710389",
+    "project_id": "softlearning-app",
+    "storage_bucket": "softlearning-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:112619710389:android:f00e7ee70fb5a00b995bfc",
+        "android_client_info": {
+          "package_name": "com.example.softlearning_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBiXD7989TDvEtZ5_ahHeihZq-LnN6Yxs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
