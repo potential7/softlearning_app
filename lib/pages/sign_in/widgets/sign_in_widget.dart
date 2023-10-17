@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../common/values/colors.dart';
 
-AppBar buildAppBar() {
+AppBar buildAppBar(String title) {
   return AppBar(
     bottom: PreferredSize(
       preferredSize: const Size.fromHeight(1.0),
@@ -12,7 +12,7 @@ AppBar buildAppBar() {
       ),
     ),
     title: Text(
-      'Log In',
+      title,
       style: TextStyle(
         color: AppColors.primaryText,
         fontSize: 16.sp,
@@ -52,7 +52,7 @@ Widget reuseAbleText(String text) {
     margin: EdgeInsets.only(top: 15.h, bottom: 5.h),
     child: Text(
       text,
-      style: TextStyle(fontSize: 14.sp, color: Colors.grey.withOpacity(0.5)),
+      style: TextStyle(fontSize: 14.sp, color: AppColors.primarySecondaryElementText),
     ),
   );
 }
@@ -139,9 +139,9 @@ Widget forgotPassword() {
   );
 }
 
-Widget buildLoginAndRegButton(String buttonName, String buttonType, func) {
+Widget buildLoginAndRegButton(String buttonName, String buttonType, void Function()? func) {
   return GestureDetector(
-    onTap: () {},
+    onTap: func,
     child: Container(
       width: 323.w,
       height: 50.h,

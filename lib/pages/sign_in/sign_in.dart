@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:softlearning_app/pages/sign_in/bloc/signin_blocs.dart';
 import 'package:softlearning_app/pages/sign_in/bloc/signin_events.dart';
 import 'package:softlearning_app/pages/sign_in/bloc/signin_states.dart';
+import 'package:softlearning_app/pages/sign_in/sign_in_controller.dart';
 import 'package:softlearning_app/pages/sign_in/widgets/sign_in_widget.dart';
 
 class SignIn extends StatefulWidget {
@@ -23,7 +24,7 @@ class _SignInState extends State<SignIn> {
           color: Colors.white,
           child: SafeArea(
             child: Scaffold(
-              appBar: buildAppBar(),
+              appBar: buildAppBar('Login'),
               body: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -58,8 +59,12 @@ class _SignInState extends State<SignIn> {
                                 .add(PasswordEvent(value));
                           }),
                           forgotPassword(),
-                          buildLoginAndRegButton('Log In', 'login', () {}),
-                          buildLoginAndRegButton('Register', 'register', () {}),
+                          buildLoginAndRegButton('Log In', 'login', () {
+                            SignInController(context: context).handleSignIn('email');
+                          }),
+                          buildLoginAndRegButton('Register', 'register', () {
+                            Navigator.of(context).pushNamed('/register');
+                          }),
                         ],
                       ),
                     )
